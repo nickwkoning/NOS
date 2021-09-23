@@ -3,7 +3,7 @@
 random_signs = function(n, N, refl = NULL) {
 
   if (log2(n) <= 4 & is.null(refl)) {
-    refl = generate_sign_flips(n)
+    refl = generate_sign_flipping_group(n)
   }
 
   W = matrix(nrow = n, ncol = N)

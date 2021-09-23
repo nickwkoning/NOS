@@ -1,7 +1,6 @@
 #' Construct group from generators
 #'
 #' @param generators sign matrix with generators in columns
-#' @param identity_index integer indicating the index of the identity element
 #' @return the closed group
 #' @keywords combine generators
 #' @export

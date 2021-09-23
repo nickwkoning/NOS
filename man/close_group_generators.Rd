@@ -4,12 +4,10 @@
 \alias{close_group_generators}
 \title{Construct group from generators}
 \usage{
-close_group_generators(generators, identity_index = NULL)
+close_group_generators(generators)
 }
 \arguments{
 \item{generators}{sign matrix with generators in columns}
-
-\item{identity_index}{integer indicating the index of the identity element}
 }
 \value{
 the closed group
@@ -18,7 +16,7 @@ the closed group
 Construct group from generators
 }
 \examples{
-close_group_generators(construct_0_generators(8), 1)
+close_group_generators(construct_oracle_generators(8))
 
 }
 \keyword{combine}
