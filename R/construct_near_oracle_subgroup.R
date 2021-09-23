@@ -59,3 +59,6 @@ construct_near_oracle_subgroup = function(n, num_candidates,
 
   return(group)
 }
+
+# Ideas for tomorrow: spit out all the subgroups here
+# Do not create a set of 100k candidates but batch it somehow
