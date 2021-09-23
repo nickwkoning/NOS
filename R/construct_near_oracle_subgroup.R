@@ -26,9 +26,10 @@ construct_near_oracle_subgroup = function(n, num_candidates,
     candidate_elements = replicate(num_candidates,
                                    sample(c(-1, 1), n, replace = TRUE))
 
+    candidate_elements = matrix(candidate_elements, ncol = num_candidates)
     # Ensure set of candidate elements is of size num_candidates and has no
     # duplicates nor shares any elements with the group
-    while (ncol(candidate_elements) < num_candidates) {
+    while (ncol(candidate_elements) < num_candidates && num_candidates + ncol(group) < 2^n) {
       candidates_list = as.list(as.data.frame(candidate_elements))
       group_list = as.list(as.data.frame(group))
       in_group = candidates_list %in% group_list
