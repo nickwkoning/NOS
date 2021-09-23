@@ -32,10 +32,11 @@ construct_near_oracle_subgroup = function(n, num_candidates,
     while (ncol(candidate_elements) < num_candidates && num_candidates + ncol(group) < 2^n) {
       candidates_list = as.list(as.data.frame(candidate_elements))
       group_list = as.list(as.data.frame(group))
-      in_group = candidates_list %in% group_list
-      duplicates = duplicated_sign_flips(candidate_elements)
 
+      in_group = candidates_list %in% group_list
       candidate_elements = candidate_elements[, !remove, drop = F]
+
+      duplicates = duplicated_sign_flips(candidate_elements)
       candidate_elements = candidate_elements[, -duplicates, drop = F]
 
       num_removed = num_candidates - ncol(candidate_elements)
