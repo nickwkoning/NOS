@@ -6,7 +6,7 @@
 #' @keywords combine generators
 #' @export
 #' @examples
-#' close_group_generators(construct_0_generators(8))
+#' close_group_generators(construct_oracle_generators(8))
 #'
 
 close_group_generators = function(generators) {

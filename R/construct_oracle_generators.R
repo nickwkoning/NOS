@@ -1,13 +1,13 @@
-#' Construct the generators for a 0-subgroup
+#' Construct the generators for an oracle subgroup
 #'
 #' @param n number of observations
-#' @return matrix with generators for a 0-subgroup as rows. Identity in column 1
-#' @keywords generators 0-subgroup
+#' @return matrix with generators for an oracle subgroup as rows. Identity in column 1
+#' @keywords generators oracle subgroup
 #' @export
 #' @examples
-#' construct_0_generators(4)
+#' construct_oracle_generators(4)
 
-construct_0_generators = function(n) {
+construct_oracle_generators = function(n) {
   p = log2(n)
   generators = matrix(nrow = n, ncol = p + 1)
 
