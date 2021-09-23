@@ -6,11 +6,10 @@
 #' @keywords construct negative subgroup
 #' @export
 #' @examples
-#' construct_neg_subgroup(4)
+#' construct_neg_subgroup(construct_oracle_subgroup(4))
 
-construct_neg_subgroup = function(n) {
-  oracle_subgroup = construct_0_subgroup(n)
-  subgroup = cbind(oracle_subgroup, -oracle_subgroup)
+construct_neg_subgroup = function(group) {
+  subgroup = cbind(group, -group)
 
   return(subgroup)
 }
