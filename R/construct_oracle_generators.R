@@ -8,7 +8,14 @@
 #' construct_oracle_generators(4)
 
 construct_oracle_generators = function(n) {
-  p = log2(n)
+  p_max = floor(log2(n)) + 1
+  for (p in 1:p_max) {
+    if (n %% 2^p > 0) {
+      break
+    }
+  }
+  p = p - 1
+
   generators = matrix(nrow = n, ncol = p + 1)
 
   generators[, 1] = 1
@@ -21,3 +28,4 @@ construct_oracle_generators = function(n) {
 
   return(generators)
 }
+
