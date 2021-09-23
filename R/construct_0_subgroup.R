@@ -9,14 +9,13 @@
 #' construct_0_subgroup(4)
 
 construct_0_subgroup = function(n) {
-
   p = log2(n)
 
   if (p %% 1 != 0) {
     stop("0-subgroup does not exist if n is not a power of 2.")
   }
 
-  group = close_group_generators(construct_0_generators(n), identity_index = 1)
+  group = close_group_generators(construct_0_generators(n))
 
   return(group)
 }

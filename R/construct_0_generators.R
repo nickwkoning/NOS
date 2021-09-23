@@ -1,7 +1,7 @@
 #' Construct the generators for a 0-subgroup
 #'
 #' @param n number of observations
-#' @return matrix with generators for a 0-subgroup as rows
+#' @return matrix with generators for a 0-subgroup as rows. Identity in column 1
 #' @keywords generators 0-subgroup
 #' @export
 #' @examples
