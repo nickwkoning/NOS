@@ -25,7 +25,7 @@ construct_near_oracle_subgroup = function(n, num_candidates, max_order, leak_fun
     }
 
     # select best candidate group
-    min_index = sapply(candidate_groups, leak_fun) %>% which.min
+    min_index = which.min(sapply(candidate_groups, leak_fun))
     group = candidate_groups[[min_index]]
   }
 
