@@ -16,6 +16,9 @@ construct_oracle_generators = function(n) {
   }
   p = p - 1
 
+  if (p == 0) {
+    return(matrix())
+  }
   generators = matrix(nrow = n, ncol = p + 1)
 
   generators[, 1] = 1
