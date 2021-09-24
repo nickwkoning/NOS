@@ -5,9 +5,9 @@
 #' @keywords max leak
 #' @export
 #' @examples
-#' leak_max(construct_oracle_subgroup(8))
+#' leak_max(colSums(construct_oracle_subgroup(8)))
 #'
 
-leak_max = function(group) {
-  max(colSums(group[, -1, drop = F]))
+leak_max = function(leak_terms) {
+  max(leak_terms)
 }

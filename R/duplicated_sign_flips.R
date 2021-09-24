@@ -12,8 +12,6 @@
 #'
 
 duplicated_sign_flips = function(sign_matrix) {
-  n = nrow(sign_matrix)
-  k = ncol(sign_matrix)
 
   # identify duplicates
   duplicates = duplicated(as.list(as.data.frame(sign_matrix)))

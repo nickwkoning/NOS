@@ -5,8 +5,8 @@
 #' @keywords l1 leak
 #' @export
 #' @examples
-#' leak_l1(construct_oracle_subgroup(8))
+#' leak_l1(colSums(construct_oracle_subgroup(8)))
 #'
-leak_l1 = function(group) {
-  mean(abs(colSums(group[, -1, drop = F])))
+leak_l1 = function(leak_terms) {
+  mean(abs(leak_terms))
 }
