@@ -4,7 +4,7 @@
 \alias{leak_l1}
 \title{Leak l1}
 \usage{
-leak_l1(group)
+leak_l1(leak_terms)
 }
 \arguments{
 \item{group}{a matrix of sign-flips}
@@ -16,7 +16,7 @@ the l1 leak value
 Leak l1
 }
 \examples{
-leak_l1(construct_oracle_subgroup(8))
+leak_l1(colSums(construct_oracle_subgroup(8)))
 
 }
 \keyword{l1}

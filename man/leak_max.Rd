@@ -4,7 +4,7 @@
 \alias{leak_max}
 \title{Leak max}
 \usage{
-leak_max(group)
+leak_max(leak_terms)
 }
 \arguments{
 \item{group}{a matrix of sign-flips}
@@ -16,7 +16,7 @@ the max leak value
 Leak max
 }
 \examples{
-leak_max(construct_oracle_subgroup(8))
+leak_max(colSums(construct_oracle_subgroup(8)))
 
 }
 \keyword{leak}
