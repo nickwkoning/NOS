@@ -1,4 +1,4 @@
-#' Given a group and an element not in the group, close the group
+#' Construct a near oracle subgroup
 #'
 #' @param n number of signs per sign-flip element
 #' @param num_candidates number of candidates generated with each group expansion

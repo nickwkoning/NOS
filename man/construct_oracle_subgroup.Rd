@@ -2,18 +2,19 @@
 % Please edit documentation in R/construct_oracle_subgroup.R
 \name{construct_oracle_subgroup}
 \alias{construct_oracle_subgroup}
-\title{Construct an oracle subgroup}
+\title{Constructs the largest possible oracle subgroup}
 \usage{
-construct_oracle_subgroup(n)
+construct_oracle_subgroup(n, max_order = n)
 }
 \arguments{
 \item{n}{number of observations that is a power of 2}
 }
 \value{
-an oracle subgroup as an n x n matrix, with elements in columns
+an oracle subgroup as an p x n matrix, with elements in columns
 }
 \description{
-Constructs a single oracle subgroup for n observations
+Constructs an oracle subgroup for n observations of desired order,
+given that it exists
 }
 \examples{
 construct_oracle_subgroup(4)

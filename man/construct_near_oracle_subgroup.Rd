@@ -2,7 +2,7 @@
 % Please edit documentation in R/construct_near_oracle_subgroup.R
 \name{construct_near_oracle_subgroup}
 \alias{construct_near_oracle_subgroup}
-\title{Given a group and an element not in the group, close the group}
+\title{Construct a near oracle subgroup}
 \usage{
 construct_near_oracle_subgroup(
   n,
@@ -27,7 +27,7 @@ construct_near_oracle_subgroup(
 a near oracle group
 }
 \description{
-Given a group and an element not in the group, close the group
+Construct a near oracle subgroup
 }
 \examples{
 construct_near_oracle_subgroup(4, 100, 8, leak_max)
