@@ -10,9 +10,14 @@
 #' construct_oracle_subgroup(4)
 
 construct_oracle_subgroup = function(n, max_order = n) {
+  if (max_order == 1) {
+    return(matrix(rep(1, n), nrow = n))
+  }
+
   oracle_generators = construct_oracle_generators(n)
-  if(any(is.null(oracle_generators))) {
-    return(NULL)
+
+  if (any(is.null(oracle_generators))) {
+    return(matrix(rep(1, n), nrow = n))
   }
 
   p = floor(log2(max_order)) + 1
