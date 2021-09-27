@@ -7,6 +7,7 @@
 #' @examples
 #' leak_l1(colSums(construct_oracle_subgroup(8)))
 #'
+
 leak_l1 = function(leak_terms) {
   mean(abs(leak_terms))
 }
