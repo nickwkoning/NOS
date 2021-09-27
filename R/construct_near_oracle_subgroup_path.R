@@ -14,7 +14,7 @@
 
 
 
-construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak_fun) {
+construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak_fun, one_sided) {
   subgroup_list = list()
 
   oracle_exhausted = FALSE
@@ -26,6 +26,9 @@ construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak
 
     if (!oracle_exhausted) {
       group = construct_oracle_subgroup(n, max_order)
+      if (one_sided) {
+        group = construct_neg_subgroup(group)
+      }
       if (ncol(group) < max_order) {
         oracle_exhausted = TRUE
       }
