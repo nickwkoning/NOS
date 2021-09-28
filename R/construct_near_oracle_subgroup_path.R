@@ -9,7 +9,7 @@
 #' @keywords near oracle group
 #' @export
 #' @examples
-#' construct_near_oracle_subgroup_path(4, 100, 10, leak_max)
+#' construct_near_oracle_subgroup_path(4, 100, 10, leak_max, TRUE)
 #'
 
 
