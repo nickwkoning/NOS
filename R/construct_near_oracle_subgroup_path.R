@@ -16,22 +16,20 @@
 
 construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak_fun, one_sided) {
   subgroup_list = list()
+  counter = 1
 
   oracle_exhausted = FALSE
-  counter = 1
-  for (max_order in 2^(0:max_rank)) {
-    if (2^n < max_order) {
-      break
-    }
 
-    if (!oracle_exhausted) {
-      group = construct_oracle_subgroup(n, max_order)
-      if (one_sided) {
-        group = construct_neg_subgroup(group)
-      }
-      if (ncol(group) < max_order) {
-        oracle_exhausted = TRUE
-      }
+  max_rank_adjusted = min(max_rank, n) # ensure that subgroups of rank exist
+
+  for (order in 2^(0:max_rank_adjusted)) {
+    if (n %% order == 0) {
+      group = construct_oracle_subgroup(n, order)
+    } else if (n %% (order / 2) == 0 && one_sided) {
+      group = construct_oracle_subgroup(n, order / 2)
+      group = construct_neg_subgroup(group)
+    } else {
+      oracle_exhausted = TRUE
     }
 
     if (oracle_exhausted) {
