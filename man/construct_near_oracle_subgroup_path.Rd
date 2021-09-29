@@ -4,7 +4,13 @@
 \alias{construct_near_oracle_subgroup_path}
 \title{Construct a path of near oracle subgroups}
 \usage{
-construct_near_oracle_subgroup_path(n, num_candidates, max_rank, leak_fun)
+construct_near_oracle_subgroup_path(
+  n,
+  num_candidates,
+  max_rank,
+  leak_fun,
+  one_sided
+)
 }
 \arguments{
 \item{n}{number of signs per sign-flip element}
