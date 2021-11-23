@@ -1,6 +1,6 @@
 #' Leak l-infinity
 #'
-#' @param group a matrix of sign-flips
+#' @param leak_terms a vector of a sum of sign-flips
 #' @return the l-infinity leak value
 #' @keywords linf leak max abs
 #' @export

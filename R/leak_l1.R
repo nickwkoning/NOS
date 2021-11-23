@@ -1,6 +1,6 @@
 #' Leak l1
 #'
-#' @param group a matrix of sign-flips
+#' @param leak_terms a vector of a sum of sign-flips
 #' @return the l1 leak value
 #' @keywords l1 leak
 #' @export

@@ -9,7 +9,8 @@ construct_near_oracle_subgroup_path(
   num_candidates,
   max_rank,
   leak_fun,
-  one_sided
+  one_sided,
+  batch_size = 1000
 )
 }
 \arguments{
@@ -17,11 +18,13 @@ construct_near_oracle_subgroup_path(
 
 \item{num_candidates}{number of candidates generated with each group expansion}
 
+\item{max_rank}{maximum rank (log2(order)) of the group, capped at log2(n)}
+
 \item{leak_fun}{the function used to compare groups}
 
-\item{max_order}{maximum rank (log2(order)) of the group}
+\item{one_sided}{# boolean that indicates whether we should seed with negative subgroups}
 
-\item{group}{# optional. A starting group. Default is just the identity group}
+\item{batch_size}{# size of the batches. Default at 1000}
 }
 \value{
 a near oracle group
@@ -30,7 +33,7 @@ a near oracle group
 Construct a path of near oracle subgroups
 }
 \examples{
-construct_near_oracle_subgroup_path(4, 100, 10, leak_max)
+construct_near_oracle_subgroup_path(4, 100, 10, leak_max, TRUE)
 
 }
 \keyword{group}

@@ -7,7 +7,7 @@
 leak_l1(leak_terms)
 }
 \arguments{
-\item{group}{a matrix of sign-flips}
+\item{leak_terms}{a vector of a sum of sign-flips}
 }
 \value{
 the l1 leak value

@@ -8,6 +8,8 @@ construct_oracle_subgroup(n, max_order = n)
 }
 \arguments{
 \item{n}{number of observations that is a power of 2}
+
+\item{max_order}{maximum order of the oracle subgroup. Default is n}
 }
 \value{
 an oracle subgroup as an p x n matrix, with elements in columns

@@ -10,8 +10,6 @@ construct_candidate_elements(group, num_candidates)
 \item{group}{the group}
 
 \item{num_candidates}{number of candidates generated for each group expansion}
-
-\item{leak_fun}{the function used to compare groups}
 }
 \value{
 a set of candidate elements

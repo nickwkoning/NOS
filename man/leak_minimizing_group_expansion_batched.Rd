@@ -9,7 +9,7 @@ leak_minimizing_group_expansion_batched(
   group,
   num_elements,
   leak_fun,
-  batch_size = min(1000, num_elements)
+  batch_size = 1000
 )
 }
 \arguments{
@@ -18,6 +18,8 @@ leak_minimizing_group_expansion_batched(
 \item{num_elements}{number of candidates generated for each group expansion}
 
 \item{leak_fun}{the function used to compare groups}
+
+\item{batch_size}{size of the batches}
 }
 \value{
 an expanded group

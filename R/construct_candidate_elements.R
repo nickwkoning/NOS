@@ -2,7 +2,6 @@
 #'
 #' @param group the group
 #' @param num_candidates number of candidates generated for each group expansion
-#' @param leak_fun the function used to compare groups
 #' @return a set of candidate elements
 #' @keywords candidate elements
 #' @export
@@ -13,6 +12,9 @@
 
 construct_candidate_elements = function(group, num_candidates) {
   n = nrow(group)
+  min_extra_elements = 10
+
+  # Ensure the #candidates does not exceed #potential candidates
   num_candidates = min(2^n - ncol(group), num_candidates)
 
   candidate_elements = matrix(sample(c(-1, 1),
@@ -27,7 +29,7 @@ construct_candidate_elements = function(group, num_candidates) {
   while (ncol(candidate_elements) < num_candidates) {
     num_removed = num_candidates - ncol(candidate_elements)
     new_candidates = matrix(sample(c(-1, 1),
-                                   n * max(num_removed, 10),
+                                   n * max(num_removed, min_extra_elements),
                                    replace = TRUE),
                             nrow = n)
 

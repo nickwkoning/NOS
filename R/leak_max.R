@@ -1,6 +1,6 @@
 #' Leak max
 #'
-#' @param group a matrix of sign-flips
+#' @param leak_terms a vector of a sum of sign-flips
 #' @return the max leak value
 #' @keywords max leak
 #' @export

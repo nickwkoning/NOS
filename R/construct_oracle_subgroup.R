@@ -3,6 +3,7 @@
 #' Constructs an oracle subgroup for n observations of desired order,
 #' given that it exists
 #' @param n number of observations that is a power of 2
+#' @param max_order maximum order of the oracle subgroup. Default is n
 #' @return an oracle subgroup as an p x n matrix, with elements in columns
 #' @keywords construct oracle subgroup
 #' @export

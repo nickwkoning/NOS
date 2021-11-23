@@ -7,7 +7,7 @@
 leak_max(leak_terms)
 }
 \arguments{
-\item{group}{a matrix of sign-flips}
+\item{leak_terms}{a vector of a sum of sign-flips}
 }
 \value{
 the max leak value
