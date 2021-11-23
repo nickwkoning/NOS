@@ -37,5 +37,5 @@ construct_candidate_elements = function(group, num_candidates) {
     candidate_elements = remove_unwanted_elements(candidate_elements, group)
   }
 
-  return(candidate_elements[, 1:num_candidates])
+  return(candidate_elements[, 1:num_candidates, drop = FALSE])
 }
