@@ -9,9 +9,8 @@
 
 remove_unwanted_elements = function(elements, group) {
   new_set = cbind(group, elements)
-  temp_list = as.list(as.data.frame(new_set))
 
-  duplicated = duplicated(temp_list)
+  duplicated = duplicated_sign_flips(new_set)
   new_set = new_set[, !duplicated, drop = F]
   elements = new_set[, -(1:ncol(group)), drop = F]
 
