@@ -2,9 +2,9 @@
 #'
 #' @param n number of signs per sign-flip element
 #' @param num_candidates number of candidates generated with each group expansion
-#' @param max_order maximum rank (log2(order)) of the group
+#' @param max_rank maximum rank (log2(order)) of the group, capped at log2(n)
 #' @param leak_fun the function used to compare groups
-#' @param group # optional. A starting group. Default is just the identity group
+#' @param one_sided # boolean that indicates whether we should seed with negative subgroups
 #' @return a near oracle group
 #' @keywords near oracle group
 #' @export
@@ -20,14 +20,14 @@ construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak
 
   oracle_exhausted = FALSE
 
-  max_rank_adjusted = min(max_rank, n) # ensure that subgroups of rank exist
+  max_rank = min(max_rank, n) # ensure that subgroups of rank exist
 
-  for (order in 2^(0:max_rank_adjusted)) {
-    if (n %% order == 0) {
-      group = construct_oracle_subgroup(n, order)
-    } else if (n %% (order / 2) == 0 && one_sided) {
+  for (order in 2^(0:max_rank)) {
+    if ((order / 2) %% 1 == 0 && n %% (order / 2) == 0 && one_sided) {
       group = construct_oracle_subgroup(n, order / 2)
       group = construct_neg_subgroup(group)
+    } else if (n %% order == 0) {
+      group = construct_oracle_subgroup(n, order)
     } else {
       oracle_exhausted = TRUE
     }
