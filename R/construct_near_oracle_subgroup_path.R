@@ -5,6 +5,7 @@
 #' @param max_rank maximum rank (log2(order)) of the group, capped at log2(n)
 #' @param leak_fun the function used to compare groups
 #' @param one_sided # boolean that indicates whether we should seed with negative subgroups
+#' @param batch_size # size of the batches. Default at 1000
 #' @return a near oracle group
 #' @keywords near oracle group
 #' @export
@@ -14,7 +15,7 @@
 
 
 
-construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak_fun, one_sided) {
+construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak_fun, one_sided, batch_size = 1000) {
   subgroup_list = list()
   counter = 1
 
@@ -36,7 +37,8 @@ construct_near_oracle_subgroup_path = function(n, num_candidates, max_rank, leak
       group = subgroup_list[[counter - 1]]
       subgroup_list[[counter]] = leak_minimizing_group_expansion_batched(group,
                                                                          num_candidates,
-                                                                         leak_fun)
+                                                                         leak_fun,
+                                                                         batch_size)
     } else {
       subgroup_list[[counter]] = group
     }

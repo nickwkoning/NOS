@@ -4,6 +4,7 @@
 #' @param group the group
 #' @param num_elements number of candidates generated for each group expansion
 #' @param leak_fun the function used to compare groups
+#' @param batch_size size of the batches
 #' @return an expanded group
 #' @keywords expand group leak batched
 #' @export
@@ -14,7 +15,9 @@
 leak_minimizing_group_expansion_batched = function(group,
                                                    num_elements,
                                                    leak_fun,
-                                                   batch_size = min(1000, num_elements)) {
+                                                   batch_size = 1000) {
+  batch_size = min(1000, num_elements)
+
   groups = list()
   for (i in 1:(num_elements / batch_size)) {
     groups[[i]] = leak_minimizing_group_expansion(group, batch_size, leak_fun)
