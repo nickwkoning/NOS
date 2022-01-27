@@ -1,7 +1,7 @@
-#' Construct a negative subgroup
+#' Construct the negative subgroup for a given group
 #'
-#' @param group a sign-flipping group
-#' @return its negative subgroup
+#' @param group a sign-flipping subgroup
+#' @return the negative subgroup
 #' @keywords construct negative subgroup
 #' @export
 #' @examples
