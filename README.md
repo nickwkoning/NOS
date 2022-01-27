@@ -4,3 +4,9 @@ This package contains an implementation of the greedy algorithm described in Kon
 Besides this, the package offers a more efficient implementation to find a range of subgroups with `n` signs in the function `construct_near_oracle_subgroup_path`, which additionally makes use of batching to reduce memory usage. 
 
 Another function of potential interest is `construct_oracle_subgroup`, which constructs an oracle subgroup of `n` signs with the largest order of at most `max_order`.
+
+# Example
+We can construct an oracle subgroup of 128 signs of order 128 as follows.
+```{r}
+oracle_subgroup = construct_oracle_subgroup(128, 128)
+```
